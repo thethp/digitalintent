@@ -6,13 +6,14 @@ define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
       class: 'question'
     },
 
+    template: _.template($('#question').html()),
+
     initialize: function(){
       this.render();
     },
 
     render: function() {
-      var template = _.template($('#question').html(), this.model.toJSON());
-      return this.$el.html(template);
+      return this.$el.html(this.template(this.model.toJSON()));;
     }
 
   });  

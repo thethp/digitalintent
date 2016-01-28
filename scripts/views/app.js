@@ -13,13 +13,13 @@ define(['jquery', 'underscore', 'backbone', 'collections/questions', 'views/ques
     },
 
     handleQuestions: function() {
-      this.$el.empty();
+      $('#questionHolder').empty();
       Questions.each(this.addQuestion, this);
     },
 
-    addTweet: function(tweet) {
-      var questionView = new QuestionView({model: Question});
-      this.$el.append(tweetView.render());
+    addQuestion: function(question) {
+      var questionView = new QuestionView({model: question});
+      $('#questionHolder').append(questionView.render());
     }
 
   });

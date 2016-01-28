@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
+#questionHolder {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.question {
+  width: 80%;
+  margin: 0 auto;
+  border: 2px solid #900;
+  border-radius: 5px;
+  display: block;
+  padding: 10px 10px 30px;
+}
+.question .user {
+  display: table-cell;
+  vertical-align: top;
+  text-align: center;
+  padding-right: 20px;
+}
+.question .user img {
+  border-radius: 100%;
+  width: 100px;
+  margin: 0 auto;
+}
+.question .user h3 {
+  margin: 0 0 5px;
+}
+.question .content {
+  display: table-cell;
+  vertical-align: top;
+}
+.question .content h1 {
+  padding: 0;
+  margin: 0;
+}

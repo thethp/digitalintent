@@ -3,7 +3,7 @@ define(['underscore', 'backbone', 'models/question'], function(_, Backbone, Ques
 
 	var Questions = Backbone.Collection.extend({
 		model: Question,
-		url: 'http://api.smartmom.co/v2/post',
+		url: 'questions.json',
 		parse: function(response) {
 			return response.posts;
 		}

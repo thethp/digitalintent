@@ -3,27 +3,20 @@ define(['underscore', 'backbone'], function(_, Backbone) {
 
   var Question = Backbone.Model.extend({
     defaults: {
-      uuid: '',
       message: 'Loading...',
-      thumbnail: '',
-      picture: '',
-      reply_count: 0,
-      created_dt: '',
-      user_img: '',
-      user_firstname: '',
-      user_lastname: ''
+      display_date: '',
+      user_img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Pacifier_for_newborn,_2015-07-12.jpg/225px-Pacifier_for_newborn,_2015-07-12.jpg'
     },
 
-    render: function() {
-      var template = _.template($('#question').html(), this.model.toJSON());
-      return this.$el.html(template);
-    }
-  });
+    initialize: function() {
+      var createdDate = new Date(this.attributes.created_dt);
+      this.set('display_date', this.formatDate(createdDate));
 
-  return Question;
-});
+      if(this.attributes.poster.picture !== null) {
+        this.set('user_img', this.attributes.poster.picture);
+      }
+    },
 
-  /*
     formatDate: function(createdDate) {
       var secsAway = Math.floor(new Date().getTime()/1000 - createdDate.getTime()/1000);
 
@@ -34,7 +27,7 @@ define(['underscore', 'backbone'], function(_, Backbone) {
 
       interval = Math.floor(secsAway/2592000);
       if (interval > 1) {
-        return interval+'mnthss ago';
+        return interval+'months ago';
       }
 
       interval = Math.floor(secsAway/86400);
@@ -44,14 +37,18 @@ define(['underscore', 'backbone'], function(_, Backbone) {
 
       interval = Math.floor(secsAway/3600);
       if (interval >= 1) {
-        return interval+' hrs ago';
+        return interval+' hours ago';
       }
 
       interval = Math.floor(secsAway/60);
       if (interval > 1) {
-        return interval+' mins ago';
+        return interval+' minutes ago';
       }
 
-      return Math.floor(secsAway)+' secs ago';
-    },
-*/
+      return Math.floor(secsAway)+' seconds ago';
+    }
+
+  });
+
+  return Question;
+});

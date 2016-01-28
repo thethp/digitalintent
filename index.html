@@ -3,12 +3,21 @@
   <head>
     <meta charset="utf-8">
     <title>Todd Page 4 Front End Dev, 2016</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 <body>
+  <main id="questionHolder"></main>
+
   <!-- template time -->
   <script type="text/html" id="question">
-     <%= message %>
+      <div class="user">
+        <h3><%= poster.first_name %> <%= poster.last_name %></h3>
+        <img src="<%= user_img %>">
+      </div>
+      <div class="content">
+        <%= message %>
+      </div>
    </script>
 
    <!-- code time -->

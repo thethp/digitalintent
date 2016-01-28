@@ -1,1 +1,1 @@
-Let's go
+npm i, bower install, have fun

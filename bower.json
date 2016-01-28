@@ -1,0 +1,13 @@
+{
+  "name": "digitalintent",
+  "description": "Digital Intent Code Test",
+  "authors": [
+    "Todd H. Page"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.0",
+    "lodash": "^4.0.1",
+    "backbone": "^1.2.3",
+    "requirejs": "^2.1.22"
+  }
+}

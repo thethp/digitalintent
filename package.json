@@ -1,0 +1,21 @@
+{
+  "name": "digitalintent",
+  "version": "0.0.0",
+  "description": "Digital Intent Code Test",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/thethp/digitalintent.git"
+  },
+  "author": "Todd H. Page",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thethp/digitalintent/issues"
+  },
+  "dependencies": {
+    "bower": "~1.7.7"
+  }
+}

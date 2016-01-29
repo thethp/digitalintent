@@ -22,7 +22,7 @@ define(['underscore', 'backbone'], function(_, Backbone) {
 
       var interval = Math.floor(secsAway/31536000);
       if (interval > 1) {
-        return interval+' years ago';
+        return interval+' year ago';
       }
 
       interval = Math.floor(secsAway/2592000);

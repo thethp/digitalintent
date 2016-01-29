@@ -3,12 +3,17 @@ define(['jquery', 'underscore', 'backbone', 'collections/questions', 'views/ques
 
   var app = Backbone.View.extend({
     el: 'body',
+
     initialize: function() {
       this.render();
     },
 
+    events: {
+      'click .next-button': 'moreMessages'
+    },
+
     render: function() {
-      this.listenTo(Questions, 'reset sort', this.handleQuestions);      
+      this.listenTo(Questions, 'reset', this.handleQuestions);      
       Questions.fetch({reset: true});
     },
 
@@ -20,6 +25,10 @@ define(['jquery', 'underscore', 'backbone', 'collections/questions', 'views/ques
     addQuestion: function(question) {
       var questionView = new QuestionView({model: question});
       $('#questionHolder').append(questionView.render());
+    },
+
+    moreMessages: function() {
+      Questions.fetch({reset: true});
     }
 
   });

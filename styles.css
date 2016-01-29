@@ -1,5 +1,11 @@
 * {
   box-sizing: border-box;
+  font-family: 'Lora', serif;
+}
+
+body {
+  margin: 50px 0;
+  background-color: #95C5EB;
 }
 
 #questionHolder {
@@ -9,11 +15,12 @@
 
 .question {
   width: 80%;
-  margin: 0 auto;
-  border: 2px solid #900;
+  margin: 0 auto 15px;
+  border: 2px solid #DEDEF8;
   border-radius: 5px;
   display: block;
-  padding: 10px 10px 30px;
+  padding: 10px;
+  background: #FFF;
 }
 .question .user {
   display: table-cell;
@@ -29,6 +36,16 @@
 .question .user h3 {
   margin: 0 0 5px;
 }
+.question .actions {
+  text-align: right;
+  font-size: 13px;
+}
+.question .actions .time {
+  margin-right: 5px;
+}
+.question .actions .comments {
+  margin-left: 5px;
+}
 .question .content {
   display: table-cell;
   vertical-align: top;
@@ -36,4 +53,13 @@
 .question .content h1 {
   padding: 0;
   margin: 0;
+}
+.next-button {
+  display: block;
+  margin: 0 auto;
+  font-size: 14px;
+  padding: 5px 15px;
+  background-color: #FFF;
+  border-radius: 5px;
+  border: 2px solid #DEDEF8;
 }
